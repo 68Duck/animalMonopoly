@@ -5,6 +5,7 @@ from animal import Animal
 import sqlite3 as lite
 from dict_factory import dict_factory
 from deck import Deck
+from getInput import getPositiveIntegerInput,getGreaterThanInput
 
 DATABASE = "cards.db"
 
@@ -118,7 +119,7 @@ if __name__ == "__main__":
 
     board = Board(animals)
 
-    noPlayers = int(input("Enter number of players"))
+    noPlayers = getGreaterThanInput("Enter the number of players",1)
     players = []
     for i in range(noPlayers):
         players.append(Player(i+1,0,2000))
